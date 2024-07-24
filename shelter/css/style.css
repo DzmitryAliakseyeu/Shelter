@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Arial";
+    src: url(../fonts/arial/ARIAL.TTF);
+}
+
+@font-face {
+    font-family: "Georgia";
+    src: url(../fonts/georgia-2/georgia.ttf);
+}
+
 body {
     max-width: 1280px;
     margin: 0 auto;
@@ -31,33 +41,35 @@ body .container .container__header header .header__title {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
 }
 
 body .container .container__header header .header__title h1 {
     color: #F1CDB3;
     font-size: 32px;
-    line-height: 110%;
+    line-height: 35.5x;
     margin: 0;
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
     font-weight: 150;
+    font-family: "Georgia";
 }
 
 body .container .container__header header .header__title p {
     color: #FFFFFF;
     font-size: 13px;
     margin: 0;
-    letter-spacing: 2px;
+    letter-spacing: 1.3px;
+    font-family: "Arial";
+    margin-left: 4px;
+    color: #FFFFFF;
+    font-weight: 100;
 }
 
 body .container .container__header header .header__nav {
-    /* width: max-content; */
-    /* height: auto; */
     display: flex;
     align-items: center;
     max-width: 443px;
     width: 100%;
-  
-   
 }
 
 body .container .container__header header .header__nav ul {
@@ -65,36 +77,146 @@ body .container .container__header header .header__nav ul {
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
-    /* gap: 35px; */
     margin: 0;
     padding: 0;
-   
    height: 27px;
-  
-   
 }
 
 body .container .container__header .header__nav ul li {
     list-style-type: none;
     height: 24px;
-    font-size: 15px;
+    /* font-size: 15px;
     line-height: 160%;
-    letter-spacing: 0px;
+    letter-spacing: 0px; */
     box-sizing: border-box;
 }
 
 body .container .container__header header .header__nav ul li a {
     color: white;
     text-decoration: none;
+    font-family: "Arial";
     font-size: 15px;
-    letter-spacing: 0;
+    letter-spacing: 0px;
+    line-height: 23.5px;
     display: block;
     width: 100%;
     height: 100%;
-    letter-spacing: 0.6px;
+    color: #CDCDCD;
 }
 
 body .container .container__header header .header__nav ul li a:hover {
     cursor: pointer;
-    border-bottom: 3px solid orange;
+    border-bottom: 3px solid #F1CDB3;
 }
+
+body .container .container__header .container__start-screen {
+    height: 728px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: row;
+    gap: 42px
+}
+
+body .container .container__header .container__start-screen .start-screen__content {
+
+   display: flex;
+   flex-direction: column;
+   gap: 42px;
+   margin-top: 163px;
+   width: 460px;
+}
+
+body .container .container__header .container__start-screen .start-screen__content h2 {
+    font-size: 44px;
+    width: 310px;
+    color: white;
+    margin: 0;
+    line-height: 56.5px;
+    font-family: "Georgia";
+    font-weight: 100;
+    color: #FFFFFF;
+}
+
+body .container .container__header .container__start-screen .start-screen__content p {
+    font-size: 15px;
+    width: 460px;
+    color: white;
+    margin: 0;
+    text-align: justify;
+    font-weight: 100;
+    letter-spacing: 0px;
+    line-height: 24px;
+    height: auto;
+    font-family: "Arial";
+    color: #CDCDCD;
+    font-weight: 100;
+}
+
+body .container .container__header .container__start-screen .start-screen__content button {
+    width: 207px;
+    height: 52px;
+    border-radius: 100px;
+    font-size: 17px;
+    background-color: #F1CDB3;
+    color: white;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1.02px;
+    line-height: 22.1px;
+    border: none;
+    color: #292929;
+    font-family: "Georgia";
+}
+
+body .container .container__header .container__start-screen .start-screen__image {
+    width: 698px;
+    height: 728px;
+}
+
+body .container .container__about {
+   margin-left: 40px;
+}
+
+body .container .container__about .about {
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+}
+
+body .container .container__about .about .about__image {
+    margin-top: 80px;
+    margin-left: 175px;
+}
+
+body .container .container__about .about .about__content {
+   max-width: 430px;
+   margin-top: 94px;
+   display: flex;
+   flex-direction: column;
+   gap: 25px;
+}
+
+body .container .container__about .about .about__content h3 {
+   margin: 0;
+   font-size: 35px;
+ 
+   max-width: 370px;
+   line-height: 45.5px;
+   letter-spacing: 2.1px;
+   color: #545454;
+   font-weight: 200;
+   font-family: "Georgia";
+}
+
+body .container .container__about .about .about__content p {
+    margin: 0;
+    font-size: 15px;
+    max-width: 430px;
+    font-family: "Arial";
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #4C4C4C;
+}
+
