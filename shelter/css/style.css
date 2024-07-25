@@ -17,7 +17,7 @@ h3 {
     font-weight: 200;
     font-family: "Georgia";
     margin: 0 auto;
-    margin-top:  80px;
+    margin-top: 80px;
     text-align: center;
 }
 
@@ -217,7 +217,7 @@ body .container .container__about .about .about__content {
 body .container .container__about .about .about__content h3 {
    margin: 0;
    font-size: 35px;
- 
+    text-align: left;
    max-width: 370px;
    line-height: 45.5px;
    letter-spacing: 2.1px;
@@ -347,7 +347,7 @@ body .container .container__pets .pets .pets__slider .slider__pets-block .slider
 }
 
 body .container .container__help {
-
+    padding-bottom: 100px;
 }
 
 body .container .container__help h3 {
@@ -428,4 +428,87 @@ body .container .container__help .help__list .list__item_8 {
 body .container .container__help .help__list .list__item_9 {
     width: 143px;
 }
+
+body .container .container__donation {
+    background-color: #F6F6F6;
+   
+}
+
+body .container .container__donation .donation {
+    max-width: 915px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 80px;
+    margin: 0 auto;
+    gap: 30px;
+    padding-bottom: 100px;
+}
+
+body .container .container__donation .donation .donation__image {
+    margin-top: 11px;
+}
+
+body .container .container__donation .donation .donation__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+body .container .container__donation .donation .donation__content h3 {
+    margin: 0;
+    width: 300px;
+    text-align: left;
+}
+
+body .container .container__donation .donation .donation__content h5 {
+    margin: 0;
+    /* width: 307px; */
+    text-align: left;
+    color: #545454;
+    font-family: "Georgia";
+    font-size: 15px;
+    line-height: 16.5px;
+    letter-spacing: 0.9px;
+    font-weight: 100;
+}
+
+body .container .container__donation .donation .donation__content p {
+    margin: 0;
+    width: 380px;
+    font-family: "Arial";
+    font-style: italic;
+    font-size: 12px;
+    line-height: 18px;
+    color: #B2B2B2;
+}
+
+body .container .container__donation .donation .donation__content .donation__credit-cart-content {
+    width: 349px;
+    height: 43px;
+    border-radius: 9px;
+    background-color: #F1CDB3;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    
+}
+
+body .container .container__donation .donation .donation__content .donation__credit-cart-content img {
+   margin: 0;
+   margin-left: 15px;
+}
+
+body .container .container__donation .donation .donation__content .donation__credit-cart-content h4 {
+    color: #545454;
+    font-size: 20px;
+    font-family: "Georgia";
+    line-height: 23px;
+    letter-spacing: 1.2px;
+    margin: 0;
+    font-weight: 100;
+}
+
+
 
