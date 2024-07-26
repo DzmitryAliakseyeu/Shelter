@@ -17,10 +17,10 @@
                 </div>
                 <nav class="header__nav">
                     <ul>
-                        <li> <a href="#">About the shelter</a></li>
-                        <li> <a href="#">Our pets</a></li>
-                        <li> <a href="#">Help the shelter</a></li>
-                        <li> <a href="#">Contacts</a></li>
+                        <li> <a href="#" class="active-nav-el">About the shelter</a></li>
+                        <li> <a href="./pages/pets.html" class="inactive-nav-el">Our pets</a></li>
+                        <li> <a href="#help-the-shelter" class="inactive-nav-el">Help the shelter</a></li>
+                        <li> <a href="#contacts" class="inactive-nav-el">Contacts</a></li>
                     </ul>
                 </nav>
             </header>
@@ -48,7 +48,7 @@
                 </div>
             </div>
         </section>
-        <section class="container__pets">
+        <section id="our-pets" class="container__pets">
             <div class="pets">
                 <h3>Our friends who<br>
                     are looking for a house
@@ -71,10 +71,13 @@
                     </div>
                     <div class="slider__button slider__button_right"></div>
                 </div>
-                <button>Get to know the rest</button>
+                <form action="./pages/pets.html">
+                    <button>Get to know the rest</button>
+                </form>
+               
             </div>
         </section>
-        <section class="container__help">
+        <section id="help-the-shelter" class="container__help">
             <h3>How you can help our shelter</h3>
             <div class="help__list">
                 <div class="list__item list__item_1">
@@ -132,6 +135,23 @@
                 </div>
             </div>
         </section>
+        <footer id="contacts">
+            <div class="footer__block">
+                <div class="suggestions-and-questions">
+                    <h3>For questions<br> and suggestions</h3>
+                    <p><img src="./img/icon-email.svg" alt=""><a href="mailto:email@shelter.com">email@shelter.com</a></p>
+                    <p><img src="./img/icon-phone.svg" alt=""><a href="tel:+13 674 567 75 54">+13 674 567 75 54</a></p>
+                </div>
+                <div class="addresses">
+                    <h3>We are waiting for your visit</h3>
+                    <p><img src="./img/icon-marker.svg" alt=""><a href="https://www.google.com/maps/search/1+Central+Street,+Boston/@42.3526809,-71.0531585,12.75z?entry=ttu">1 Central Street, Boston<br>(entrance from the store)</a></p>
+                    <p><img src="./img/icon-marker.svg" alt=""><a href="https://www.google.com/maps/search/18+South+Park,+London+/@51.4447037,-0.2385122,13z/data=!3m1!4b1?entry=ttu">18 South Park, London </a></p>
+                </div>
+                <div class="footer__image">
+                    <img src="./img/footer-puppy.png" alt="puppy-image">
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
