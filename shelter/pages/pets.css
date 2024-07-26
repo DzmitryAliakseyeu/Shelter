@@ -5,17 +5,24 @@ body .container header {
     padding-top: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    padding-bottom: 30px;
 }
 
-body .container header .header__title {
+body .container header a {
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+}
+
+body .container header a .header__title {
     display: flex;
     flex-direction: column;
     gap: 10px;
     
 }
 
-body .container header .header__title h1 {
-    color: #F1CDB3;
+body .container header a .header__title h1 {
+    color: #545454;
     font-size: 32px;
     line-height: 35.5x;
     margin: 0;
@@ -24,14 +31,13 @@ body .container header .header__title h1 {
     font-family: "Georgia";
 }
 
-body .container header .header__title p {
-    color: #FFFFFF;
+body .container header a .header__title p {
+    color: #545454;
     font-size: 13px;
     margin: 0;
     letter-spacing: 1.3px;
     font-family: "Arial";
     margin-left: 4px;
-    color: #FFFFFF;
     font-weight: 100;
 }
 

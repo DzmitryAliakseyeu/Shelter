@@ -11,6 +11,7 @@
 html {
     scroll-behavior: smooth;
 }
+
 h3 {
     margin: 0;
     font-size: 35px;
@@ -38,29 +39,34 @@ body .container {
 body .container .container__header {
     width: 100%;
     background-image: url('../img/header-background.png');
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-between; */
 }
 
 body .container .container__header header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  
     padding-top: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-body .container .container__header header .header__title {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+body .container .container__header header a {
+    text-decoration: none;
     
 }
 
-body .container .container__header header .header__title h1 {
+body .container .container__header header a .header__title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+body .container .container__header header a .header__title{
+    /* display: block;
+    width: 100%; */
+}
+
+body .container .container__header header a .header__title h1 {
     color: #F1CDB3;
     font-size: 32px;
     line-height: 35.5x;
@@ -70,7 +76,7 @@ body .container .container__header header .header__title h1 {
     font-family: "Georgia";
 }
 
-body .container .container__header header .header__title p {
+body .container .container__header header a .header__title p {
     color: #FFFFFF;
     font-size: 13px;
     margin: 0;
@@ -193,6 +199,7 @@ body .container .container__header .container__start-screen .start-screen__conte
     border: none;
     color: #292929;
     font-family: "Georgia";
+    cursor: pointer;
 }
 
 body .container .container__header .container__start-screen .start-screen__image {
@@ -300,6 +307,11 @@ body .container .container__pets .pets .pets__slider {
     align-items: center;
 }
 
+body .container .container__pets .pets form {
+    width: fit-content;
+    margin: 0 auto;
+}
+
 body .container .container__pets .pets .pets__slider .slider__button {
     width: 52px;
     height: 52px;
@@ -368,11 +380,13 @@ body .container .container__pets .pets .pets__slider .slider__pets-block .slider
 
 body .container .container__help {
     padding-bottom: 100px;
+    padding-top: 80px;
 }
 
 body .container .container__help h3 {
     width: 100%;
     margin-bottom: 58px;
+    margin-top: 0;
 }
 
 body .container .container__help .help__list {
@@ -465,6 +479,11 @@ body .container .container__donation .donation {
     padding-bottom: 100px;
 }
 
+body .container .container__donation .donation a {
+    display: block;
+    text-decoration: none;
+}
+
 body .container .container__donation .donation .donation__image {
     margin-top: 11px;
 }
@@ -472,6 +491,7 @@ body .container .container__donation .donation .donation__image {
 body .container .container__donation .donation .donation__content {
     display: flex;
     flex-direction: column;
+    align-items: left;
     gap: 20px;
 }
 
@@ -552,7 +572,7 @@ body .container footer .footer__block .suggestions-and-questions {
     /* justify-content: space-between; */
     gap: 39px;
     align-items:center;
-    max-width: 278px; 
+    width: 278px; 
     /* padding-bottom: 60px; */
     margin-top: 16px;
   
@@ -593,9 +613,9 @@ body .container footer .footer__block .addresses {
     display: flex;
     flex-direction: column;
     /* justify-content: space-around; */
-    gap: 34px;
+    gap: 32px;
     padding-bottom: 60px;
-    max-width: 302px;
+    width: 302px;
     margin-top: 16px;
     height: 234px;
 }
