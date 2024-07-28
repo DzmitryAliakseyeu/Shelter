@@ -52,18 +52,12 @@ body .container .container__header header {
 
 body .container .container__header header a {
     text-decoration: none;
-    
 }
 
 body .container .container__header header a .header__title {
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-body .container .container__header header a .header__title{
-    /* display: block;
-    width: 100%; */
 }
 
 body .container .container__header header a .header__title h1 {
@@ -107,9 +101,6 @@ body .container .container__header header .header__nav ul {
 body .container .container__header .header__nav ul li {
     list-style-type: none;
     height: 24px;
-    /* font-size: 15px;
-    line-height: 160%;
-    letter-spacing: 0px; */
     box-sizing: border-box;
 }
 
@@ -125,12 +116,20 @@ body .container .container__header header .header__nav ul li a {
     color: #CDCDCD;
 }
 
-
+@keyframes hover-nav {
+    0%   {border-bottom: 0px solid #f1cdb300;
+    }
+    100% { border-bottom: 3px solid #F1CDB3;
+    }
+}
 
 body .container .container__header header .header__nav ul li .inactive-nav-el:hover {
     color: white;
     cursor: pointer;
     border-bottom: 3px solid #F1CDB3;
+    animation-name: hover-nav;
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
 }
 
 body .container .container__header header .header__nav ul li .active-nav-el {
@@ -151,7 +150,6 @@ body .container .container__header .container__start-screen {
 }
 
 body .container .container__header .container__start-screen .start-screen__content {
-
    display: flex;
    flex-direction: column;
    gap: 42px;
@@ -200,6 +198,11 @@ body .container .container__header .container__start-screen .start-screen__conte
     color: #292929;
     font-family: "Georgia";
     cursor: pointer;
+    transition: 1s;
+}
+
+body .container .container__header .container__start-screen .start-screen__content button:hover {
+    background-color: #FDDCC4;
 }
 
 body .container .container__header .container__start-screen .start-screen__image {
@@ -262,8 +265,6 @@ body .container .container__pets .pets {
     display: flex;
     flex-direction: column;
     gap: 60px;
-    
-    
 }
 
 body .container .container__pets .pets button {
@@ -280,8 +281,13 @@ body .container .container__pets .pets button {
     border: none;
     color: #292929;
     cursor: pointer;
-
+    transition: 1s;
 }
+
+body .container .container__pets .pets button:hover {
+    background-color: #FDDCC4;
+}
+
 
 body .container .container__pets .pets h3 {
     margin: 0;
@@ -322,8 +328,13 @@ body .container .container__pets .pets .pets__slider .slider__button_left {
 }
 
 body .container .container__pets .pets .pets__slider .slider__button_right {
-    background-image: url('../img/button_arrow_inactive_right.svg');
-    
+    background-image: url('../img/button_arrow_right_active.svg');
+    cursor: pointer;
+}
+
+body .container .container__pets .pets .pets__slider .slider__button_right:hover {
+    background-image: url('../img/button_arrow_hover_right.svg');
+    transition: 1s;
 }
 
 
@@ -346,9 +357,24 @@ body .container .container__pets .pets .pets__slider .slider__pets-block .slider
     box-sizing:border-box;
 }
 
+@keyframes hover-slider-block {
+    0%   { border: 0px solid rgba(0, 0, 0, 0);;
+    }
+    100% {  border: 2px solid rgba(0, 0, 0, 0.174);;
+    }
+}
+
 body .container .container__pets .pets .pets__slider .slider__pets-block .slider__block:hover {
     border: 2px solid rgba(0, 0, 0, 0.174);
     cursor: pointer;
+    animation-name: hover-slider-block;
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+}
+
+body .container .container__pets .pets .pets__slider .slider__pets-block .slider__block:hover  button {
+    border-color:  #FDDCC4;
+    background-color: #FDDCC4;
 }
 
 body .container .container__pets .pets .pets__slider .slider__pets-block .slider__block p {
@@ -392,7 +418,6 @@ body .container .container__help h3 {
 body .container .container__help .help__list {
     display: flex;
     flex-direction: row;
-    /* gap: 55px 120px ; */
     column-gap: 120px;
     row-gap: 55px;
     flex-wrap: wrap;
@@ -503,7 +528,6 @@ body .container .container__donation .donation .donation__content h3 {
 
 body .container .container__donation .donation .donation__content h5 {
     margin: 0;
-    /* width: 307px; */
     text-align: left;
     color: #545454;
     font-family: "Georgia";
@@ -549,6 +573,11 @@ body .container .container__donation .donation .donation__content .donation__cre
     margin: 0;
     font-weight: 100;
 }
+body .container .container__donation .donation .donation__content .donation__credit-cart-content:hover {
+    background-color: #FDDCC4;
+    transition: 1s;
+}
+
 
 body .container footer {
     background-image: url('../img/header-background.png');
@@ -562,21 +591,15 @@ body .container footer .footer__block {
     margin: 0 auto;
     padding-top: 40px;
     height: fit-content;
-    /* margin-bottom: ; */
-
 }
 
 body .container footer .footer__block .suggestions-and-questions {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     gap: 39px;
     align-items:center;
     width: 278px; 
-    /* padding-bottom: 60px; */
     margin-top: 16px;
-  
-    
 }
 
 body .container footer .footer__block p {
@@ -586,7 +609,6 @@ body .container footer .footer__block p {
     align-items:center;
     gap: 20px;
     width: 100%;
-   
 }
 
 body .container footer .footer__block a {
@@ -597,14 +619,16 @@ body .container footer .footer__block a {
     letter-spacing: 1.2px;
     font-weight: 100;
     font-family: "Georgia";
+    transition: 1s;
+}
+
+body .container footer .footer__block a:hover {
+    color: #fbf1e9;
 }
 
 body .container footer .footer__block h3 {
     margin-top: 0px;
     color: #FFFFFF;
-    /* font-size: 35px;
-    line-height: 45.5px;
-    letter-spacing: 2.1px; */
     text-align: left;
 }
 
@@ -612,7 +636,6 @@ body .container footer .footer__block h3 {
 body .container footer .footer__block .addresses {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
     gap: 32px;
     padding-bottom: 60px;
     width: 302px;
