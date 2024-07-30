@@ -27,18 +27,19 @@ h3 {
 }
 
 body {
-    max-width: 1280px;
-    margin: 0 auto;
+    /* max-width: 1280px; */
+    /* margin: 0 auto; */
+    margin: 0;
 }
 
 body .container {
     width: 100%;
-    
 }
 
 body .container .container__header {
     width: 100%;
     background-image: url('../img/header-background.png');
+    background-size: cover;
 }
 
 body .container .container__header header {
@@ -211,7 +212,10 @@ body .container .container__header .container__start-screen .start-screen__image
 }
 
 body .container .container__about {
-   margin-left: 40px;
+   /* margin-left: 40px; */
+   width: 100%;
+   display: flex;
+   justify-content: center;
 }
 
 body .container .container__about .about {
@@ -224,7 +228,6 @@ body .container .container__about .about {
 
 body .container .container__about .about .about__image {
     margin-top: 80px;
-    margin-left: 175px;
 }
 
 body .container .container__about .about .about__content {
@@ -321,6 +324,10 @@ body .container .container__pets .pets form {
 body .container .container__pets .pets .pets__slider .slider__button {
     width: 52px;
     height: 52px;
+}
+
+body .container .container__pets .pets .pets__slider .slider__button:hover{
+    border-color: #FDDCC4;
 }
 
 body .container .container__pets .pets .pets__slider .slider__button_left {
@@ -581,6 +588,7 @@ body .container .container__donation .donation .donation__content .donation__cre
 
 body .container footer {
     background-image: url('../img/header-background.png');
+    background-size: cover;
 }
 
 body .container footer .footer__block {
