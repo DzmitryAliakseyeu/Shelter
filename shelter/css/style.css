@@ -773,6 +773,17 @@ body .container footer .footer__block .footer__image {
     body .container .container__help .help__list .list__item {
         width: 170px;
     }
+
+    body .container .container__donation .donation {
+        flex-direction: column-reverse;
+        max-width: fit-content;
+        gap: 48px
+    }
+
+    body .container .container__donation .donation .donation__content {
+        max-width: fit-content;
+        margin: 0 auto;
+    }
 }
 
 
