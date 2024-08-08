@@ -882,6 +882,114 @@ body .container footer .footer__block .footer__image {
     }
 }
 
+@media (max-width: 460px){
+    /* body h3 {
+        text-align: center;
+        font-size: 25px;
+        line-height: 32.5px;
+        letter-spacing: 1.5px;
+    } */
+
+    body .container .container__header header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    body .container .container__header .container__start-screen {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 59px;
+        gap: 106px;
+    }
+
+    body .container .container__header .container__start-screen .start-screen__content h2 {
+        font-size: 25px;
+        text-align: center;
+        line-height: 32.5px;
+        letter-spacing: 1.5px;
+        /* width: 100%; */
+        padding: 0 45px; 
+    }
+
+    body .container .container__header .container__start-screen .start-screen__content p {
+        /* padding: 0 12px; */
+        text-align: center;
+    }
+
+    body .container .container__header .container__start-screen .start-screen__content {
+        gap: 41px;
+    }
+
+    body .container .container__header .container__start-screen .start-screen__image img {
+        width: 86%;
+        margin-left: 14%;
+    }
+
+    body .container .container__about {
+        /* max-width: 300px; */
+        width: 100%;
+       margin: 0 auto;
+    }
+
+    body .container .container__about .about {
+        max-width: 300px;
+        width: 100%;
+        margin: 0 auto;
+        gap: 43px;
+    }
+
+    body .container .container__about .about .about__image {
+        max-width: 260px;
+        width: 100%;
+    }
+
+    body .container .container__about .about .about__image img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    body .container .container__about .about .about__content {
+        margin: 0 auto;
+        margin-top: 41px;
+        max-width: 290px;
+        width: 100%;
+        gap: 23px;
+    }
+
+    body .container .container__about .about .about__content h3 {
+        text-align: center;
+        font-size: 25px;
+        line-height: 32.5px;
+        letter-spacing: 1.5px;
+    }
+
+    body .container .container__about .about .about__content p {
+        text-align: justify;
+        margin: 0 10px;
+    }
+
+    body .container .container__pets .pets .pets__slider {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 52px;
+        gap: 0;
+    }
+
+    body .container .container__pets .pets .pets__slider .slider__pets-block {
+        grid-row: 1 ;
+        grid-column: 1 / span 2;
+    }
+
+    body .container .container__pets .pets .pets__slider .button__container {
+        grid-row: 2;
+        margin: 0 auto;
+    }
+
+    body .container .container__pets .pets .pets__slider .button__container .slider__button_right {
+        margin: 0;
+    }
+}
+
 @media (max-width: 320px) {
 
 } 
