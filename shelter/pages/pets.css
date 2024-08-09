@@ -41,6 +41,24 @@ body .container header a .header__title p {
     font-weight: 100;
 }
 
+body .container header .burger__nav {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    margin: auto;
+    margin-right: 0;
+    padding: 0;
+}
+
+body .container header .burger__nav li {
+    height: 2px;
+    width: 100%;
+    background-color: #000000;
+    list-style-type: none;
+}
+
 body .container header .header__nav {
     display: flex;
     align-items: center;
@@ -113,6 +131,7 @@ body .container .container__pets .pets .pets__slider .slider__pets-block {
     row-gap: 30px;
     width: 100%;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 body .container .container__pets .pets h3 {
@@ -173,4 +192,169 @@ body .container .container__pets .pets .pets__navigation-block .navigation-block
     text-align: center;
     border-radius: 52px;
     margin: 0;
+}
+
+@media (max-width: 1276px) {
+
+    body .container header {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    body .container .container__pets .pets .pets__slider .slider__pets-block {
+        max-width: 1000px;
+        width: 100%;
+        margin: 0  auto;
+    }
+
+    body .container footer .footer__block {
+        margin-left: 64px;
+        margin-right: 64px;
+    }
+}
+
+@media (max-width: 966px) {
+    body .container .container__pets .pets .pets__slider .slider__pets-block {
+        max-width: 580px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 768px) {
+    body .container header {
+        max-width: 708px;
+    }
+
+    body .container header a .header__title {
+        gap: 9px;
+    }
+
+    body .container .container__pets .pets {
+        gap: 15px;
+    }
+
+    /* body .container .container__pets .pets .pets__slider .slider__pets-block {
+        max-width: 580px;
+        width: 100%;
+        margin: 0 auto;
+    } */
+
+    body .container .container__pets .pets .pets__slider .slider__pets-block .slider__block:nth-child(7){
+        display: none;
+    }
+
+    body .container .container__pets .pets .pets__slider {
+        padding-bottom: 25px;
+        padding-top: 14px;
+    }
+
+    body .container .container__pets .pets .pets__navigation-block .navigation-block__count {
+        line-height: 51px;
+    }
+
+    body .container .container__pets .pets .pets__navigation-block {
+        padding-bottom: 76px;
+    }
+
+    body .container footer .footer__block {
+        padding-top: 14px;
+    }
+
+}
+
+@media (max-width: 767px){
+
+    body .container footer .footer__block {
+        gap: 40px;
+    }
+
+    body .container footer .footer__block h3 {
+        font-size: 25px;
+        line-height: 32.5px;
+        letter-spacing: 1.5px;
+    }
+
+}
+
+@media (max-width: 767px){
+    body .container header .burger__nav {
+        display: flex;
+    }
+
+    body .container header .header__nav {
+        display: none;
+    }
+}
+
+@media (max-width: 639px){
+    body .container .container__pets .pets .pets__slider .slider__pets-block {
+        max-width: 270px;
+        width: 100%;
+    }
+
+    body .container .container__pets .pets .pets__slider .slider__pets-block .slider__block {
+        display: none;
+    }
+
+    body .container .container__pets .pets .pets__slider .slider__pets-block  > .slider__block:nth-child(-n+3){
+        display: flex;
+    }
+}
+
+@media (max-width: 460px){
+    body .container header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    body .container .container__pets .pets h3 {
+        margin-top: 42px;
+    }
+
+    body .container .container__pets .pets .pets__slider {
+        padding-bottom: 25px;
+        padding-top: 27px;
+        display: flex;
+    }
+
+    body .container .container__pets .pets .pets__navigation-block {
+        gap: 10px;
+    }
+
+    body .container .container__pets .pets .pets__navigation-block {
+       padding-bottom: 43px;
+    }
+
+    body .container .container__pets .pets button {
+        margin-bottom: 0;
+    }
+
+    body .container footer .footer__block {
+        padding-top: 8px;
+        gap: 0;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    body .container footer .footer__block .suggestions-and-questions {
+        margin-top: 0;
+    }
+
+    body .container footer .footer__block .suggestions-and-questions h3 {
+        margin: 0 auto;
+        margin-top: 22px;
+        /* max-width: 270px; */
+        width: 100%;
+        text-align: center;
+        font-size: 25px;
+        line-height: 32.5px;
+        letter-spacing: 1.5px;
+    }
+
+    body .container footer .footer__block .addresses {
+        max-width: 300px;
+        width: 100%;
+    }
 }
