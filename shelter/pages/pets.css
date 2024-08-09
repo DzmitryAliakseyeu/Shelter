@@ -278,7 +278,7 @@ body .container .container__pets .pets .pets__navigation-block .navigation-block
 
 }
 
-@media (max-width: 720px){
+@media (max-width: 767px){
     body .container header .burger__nav {
         display: flex;
     }
