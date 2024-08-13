@@ -30,9 +30,22 @@ body {
     margin: 0;
 }
 
+.rotate {
+    transform: rotate(90deg);
+    transition: 1s;
+    
+}
+
+.nonrotate {
+    transform: rotate(0deg);
+    transition: 1s;
+}
+
 body .container {
     width: 100%;
 }
+
+
 
 body .container .container__header {
     width: 100%;
@@ -49,6 +62,7 @@ body .container .container__header header {
     margin: 0 auto;
     padding-right: 30px;
     padding-left: 30px;
+    position: relative;
 }
 
 body .container .container__header header .burger__nav {
@@ -67,6 +81,16 @@ body .container .container__header header .burger__nav li {
     width: 100%;
     background-color: #F1CDB3;
     list-style-type: none;
+}
+
+body .container .container__header .menu{
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 1111;
+    top: 0;
+    right: 0;
 }
 
 body .container .container__header header a {
