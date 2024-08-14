@@ -36,9 +36,10 @@ window.addEventListener('resize', function() {
 
 
 function controlBurgerMenu(){
-    if(document.querySelector('.header')){
-        const header = document.querySelector('.header');
-       
+    console.log(headerNav)
+    // if(document.querySelector('.header')){
+        // const header = document.querySelector('.header');
+        // console.log('here')
        if(!openMenu){
             openMenu = true;
             buttonBurger.classList.toggle('rotate');
@@ -52,5 +53,5 @@ function controlBurgerMenu(){
             headerNav.classList.remove('menu');
             buttonBurger.classList.remove('rotate');
        }
-    }
+    // }
 }
