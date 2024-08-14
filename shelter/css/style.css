@@ -867,7 +867,6 @@ body .container footer .footer__block .footer__image {
         position: absolute;
         right: -320px;
         width: 320px;
-        /* height: 400px; */
         background-color: #292929;
     }
 
@@ -893,7 +892,6 @@ body .container footer .footer__block .footer__image {
      }
 
      body .container .container__header header .header__nav ul li a{
-       
         font-size: 32px;
      }
 }
@@ -1064,6 +1062,7 @@ body .container footer .footer__block .footer__image {
         column-gap: 29px;
         row-gap: 4px;
         justify-content: space-between;
+        justify-content: center;
         margin: 0 auto;
         padding: 0 15px;
         padding-bottom: 14px;
@@ -1209,6 +1208,12 @@ body .container footer .footer__block .footer__image {
     body .container footer .footer__block .footer__image img {
         width: 100%;
         object-fit: contain;
+    }
+}
+
+@media (max-width: 325px){
+    body .container .container__help .help__list {
+        justify-content: space-between;
     }
 }
 
