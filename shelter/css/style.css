@@ -10,6 +10,7 @@
 
 html {
     scroll-behavior: smooth;
+   
 }
 
 h3 {
@@ -28,18 +29,26 @@ h3 {
 
 body {
     margin: 0;
-}
-
-.rotate {
-    transform: rotate(90deg);
-    transition: 1s;
     
 }
 
+
+.rotate {
+    transform: rotate(90deg);
+    transition: 2.3s;
+    z-index: 11111;
+}
+
+
+
 .nonrotate {
     transform: rotate(0deg);
-    transition: 1s;
+    transition: 2.3s;
+    z-index: 11111;
+ 
 }
+
+
 
 body .container {
     width: 100%;
@@ -51,6 +60,7 @@ body .container .container__header {
     width: 100%;
     background-image: url('../img/header-background.png');
     background-size: cover;
+    overflow: hidden;
 }
 
 body .container .container__header header {
@@ -85,7 +95,6 @@ body .container .container__header header .burger__nav li {
 
 body .container .container__header .menu{
     width: 300px;
-    height: 400px;
     background-color: #fff;
     position: absolute;
     z-index: 1111;
@@ -854,8 +863,39 @@ body .container footer .footer__block .footer__image {
     }
 
     body .container .container__header header .header__nav {
-        display: none;
+        display: block;
+        position: absolute;
+        right: -320px;
+        width: 320px;
+        /* height: 400px; */
+        background-color: #292929;
     }
+
+    body .container .container__header header .header__nav ul {
+       flex-direction: column;
+       width: inherit;
+       margin: 0 auto;
+       margin-top: 264px;
+       width: 243px;
+       align-items: center;
+       gap: 68px;
+       padding-bottom: 259px;
+       height: max-content;
+    }
+
+    body .container .container__header header .header__nav ul li{
+        width: fit-content;
+        font-size: 32px;
+     }
+
+     body .container .container__header header .header__nav ul li .active-nav-el {
+        padding-bottom: 10px;
+     }
+
+     body .container .container__header header .header__nav ul li a{
+       
+        font-size: 32px;
+     }
 }
 
 @media (max-width: 720px) {
@@ -1171,5 +1211,40 @@ body .container footer .footer__block .footer__image {
         object-fit: contain;
     }
 }
+
+@keyframes appearance-menu{
+    from {
+        right: -400px;
+    }
+
+    to {
+        right: 0px;
+    }
+}
+
+
+
+body .container .container__header header .menu {
+    animation: appearance-menu 2s forwards;
+}
+
+@keyframes close-menu{
+    from {
+        right: 0px;
+       
+    }
+
+    to {
+        right: -320px;
+        
+    }
+}
+
+.close-menu {
+    background-color: #fff;
+    animation: close-menu 2s forwards;
+    top: 0;
+}
+
 
 
