@@ -824,9 +824,9 @@ body .container footer .footer__block .footer__image {
         /* justify-content: center; */
     }
 
-    body .container .container__pets .pets .pets__slider .slider__pets-block .slider__block:last-child{
+    /* body .container .container__pets .pets .pets__slider .slider__pets-block .slider__block:last-child{
         display: none;
-    }
+    } */
 
     body .container .container__pets .pets .pets__slider .button__container {
         max-width: 64px;

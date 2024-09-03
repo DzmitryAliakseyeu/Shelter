@@ -1,89 +1,110 @@
-import {buttonArrowLeft, buttonArrowRight, sliderContainer, sliderPetsBlock} from "./constants.js";
+import { sliderContainer, sliderPetsBlock} from "./constants.js";
+import { fillCurrentArray } from "./fillArrayFirstLoad.js";
 import fillSlide from "./fillSlide.js";
+import { defineSlideToShow } from "./index.js";
 import { arrLastSlides, pets } from "./objects.js";
+import { sliderInfo } from "./popup.js";
 import randomArr from "./randomFunction.js";
-import removeSliderBlock from "./removeSliderBlock.js";
-import { addNewSliderBlock } from "./renderNewSliderBlock.js";
 
-// const sliderBlock = document.querySelector('.slider__pets-block');
-// let currentIndex = 0;
-// let slidesToShow = 3;
-// const totalSlides = sliderPetsBlock.length;
-
-// const slideWidth = sliderPetsBlock[0].clientWidth;
-
-// export default function goToSlide(index) {
- 
-//     if(index < 0){
-//         currentIndex = totalSlides - slidesToShow;
-//     } else if(index > totalSlides - slidesToShow){
-//         currentIndex = 0;
-//     } else {
-//         currentIndex = index;
-//         const offset = -currentIndex * slideWidth;
-//         sliderBlock.style.transform = `translateX(${offset}px)`;
-//     }
-// }
-
-// buttonArrowLeft.addEventListener('click',  goToSlide(currentIndex + slidesToShow));
-// buttonArrowRight.addEventListener('click', goToSlide);
-
-let slideToShow = 3;
+export let slideToShow;
 let slideWidth = sliderPetsBlock[0].clientWidth;
-let slidesWidth = slideWidth * slideToShow;
-console.log(slidesWidth)
-let gap = (sliderContainer.clientWidth - slidesWidth) / 2;
-// let sliderStep = slidesWidth + gap * 3;
+let slidesWidth;
+let gap;
+let gapAdd;
 let sliderStep = 0;
-let positionSlider = 0;
 let currentIndex = 1;
-let totalSlides = sliderPetsBlock.length;
-// console.log(gap);
-// console.log(slidesWidth);
-// console.log(sliderStep);
 let randomNumber = 0;
 let currentArr = [];
+let lastArr = [];
 let count  = 0;
+let move;
 
-let random = () => {
+export let random = (arr) => {
+    
     do {
         randomNumber = randomArr(0, pets.length-1);
-    } while (currentArr.includes(randomNumber) || arrLastSlides.includes(randomNumber));
-    currentArr.push(randomNumber);
+    } while (arr.includes(randomNumber) || arrLastSlides.includes(randomNumber));
+    arr.push(randomNumber);
+    return arr;
+}
+
+function fillCurrentArrayIfEmpty(slideToShow) {
+    slideToShow =  defineSlideToShow();
+    // console.log(slideToShow)
+    if (currentArr.length === 0) {
+        while (count < pets.length) {
+            random(currentArr);
+            count++;
+        }
+    }
+    if(slideToShow > 2){
+        currentArr.push(randomArr(2, 4));
+        // sliderPetsBlock[sliderPetsBlock.length - 1].style = 'display: none;'
+        return currentArr
+    }
+    return currentArr
+  
+}
+
+export function startSlider(currentArray) {
+    if(!currentArray || currentArr.length === 0){
+        if(!currentArray){
+            currentArray = fillCurrentArray();
+            currentArray.map((el) => currentArr.push(el));
+        } 
+        fillCurrentArrayIfEmpty(slideToShow);
+    }
+
+    if(currentArray || currentArr.length > 0){
+        // console.log(currentArray)
+        move = setInterval(() => {
+            movedSliderLeft();
+        }, 2000); 
+    }
+}
+
+export function stopSlider() {
+    if (move) {
+        clearInterval(move);
+    }
 }
 
 export default function movedSliderLeft() {
-
-   if(currentArr.length === 0){
-    console.log('currentArr length 0')
-        while(count < pets.length){
-            random();
-            count ++
-        }
-    currentArr.push(randomArr(0, 2));
-   }
+    stopSlider();
+    slideToShow =  defineSlideToShow();
+    slidesWidth = slideWidth * slideToShow;
+    gap = (sliderContainer.clientWidth - slidesWidth) / slideToShow;
+    // gap = (sliderContainer.clientWidth - slidesWidth) / slideToShow;
+    console.log('sliderStep left: ' + sliderStep)
+    console.log('currentIndex left: ' +currentIndex)
  
-     if (currentIndex >= 1 && currentIndex < 3){
-        sliderStep += slidesWidth + gap * 3;
+    if (currentIndex >= 1 && currentIndex < Math.floor(sliderPetsBlock.length / slideToShow)){
         currentIndex += 1;
-    } else if(currentIndex >= 3){
+        if(slideToShow == 1){
+            sliderContainer.style.gap = `clamp(0px, calc((100% - ${slideToShow} * 270px) / 2), 90px)`;
+            sliderStep += sliderContainer.clientWidth;
+        } else if(slideToShow === 2){
+            sliderContainer.style = `gap: clamp(5px, calc((100% - ${slideToShow} * 270px)), 90px); justify-content: space-between`;
+            sliderStep += sliderContainer.clientWidth + gap * 2;
+        } else {
+            sliderStep += sliderContainer.clientWidth + gap * 1.5;
+        }       
+
+    } else if(currentIndex >= Math.floor(sliderPetsBlock.length / slideToShow)){
         sliderStep = 0;
         currentIndex = 1;
         currentArr.length = 0;
         count = 0;
-        if(currentArr.length === 0){
-            console.log('currentArr length 0')
-                while(count < pets.length){
-                    random();
-                    count ++
-                }
-            currentArr.push(randomArr(0, 2));
-        }
-
+        fillCurrentArrayIfEmpty(slideToShow);
     }
 
     sliderPetsBlock.forEach((el, i) => {
-        fillSlide(el, currentArr[i]);
+        if (currentArr[i] !== undefined && pets[currentArr[i]] !== undefined) {
+            el.setAttribute('data-id', pets[currentArr[i]].id);
+            el.addEventListener('click', function(e){
+                sliderInfo(e)});
+            fillSlide(el, currentArr[i]);
+        }
 
         if(currentIndex == 1){
             el.style.transition = 'transform 0s ease-in-out';
@@ -92,23 +113,76 @@ export default function movedSliderLeft() {
             el.removeAttribute('style');
         }
         el.style.transform = `translateX(-${sliderStep}px)`;
-    });   
+    }); 
+    startSlider(currentArr)
 }
 
 export function movedSliderRight() { 
+    console.log('current Index === ' + currentIndex)
+  
+    stopSlider()
+    slideToShow =  defineSlideToShow();
+    if(slideToShow === 1){
+        gapAdd = 0;
+    } else if(slideToShow === 2){
+        gapAdd = 2;
+    } else if(slideToShow === 3){
+        gapAdd = 1.5;
+    }
+
+    console.log(gapAdd)
+    slidesWidth = slideWidth * slideToShow;
+    gap = (sliderContainer.clientWidth - slidesWidth) / slideToShow;
+    currentArr.length = 0;
+    count = 0;
+
+    if(currentIndex === 1){
+        currentIndex = Math.floor(sliderPetsBlock.length / slideToShow);
+        sliderStep = -(sliderContainer.clientWidth + gap * gapAdd) * (slideToShow - 1);
+    } else if (currentIndex > 1 && currentIndex < Math.floor(sliderPetsBlock.length / slideToShow)) {
+        console.log('this')
+        if (slideToShow == 1) {
+            sliderContainer.style.gap = `clamp(0px, calc((100% - ${slideToShow} * 270px) / 2), 90px)`;
+            sliderStep -= sliderContainer.clientWidth;
+        } else if (slideToShow === 2) {
+            sliderContainer.style.gap = `clamp(5px, calc((100% - ${slideToShow} * 270px)), 90px)`;
+            sliderStep -= sliderContainer.clientWidth + gap * gapAdd;
+        } else if (slideToShow === 3) {
+            console.log(sliderStep)
+            sliderStep += sliderContainer.clientWidth + gap * gapAdd;
+            console.log(sliderStep)
+            currentIndex -= 1;
+        }
+    } else if(currentIndex === Math.floor(sliderPetsBlock.length / slideToShow)){
+        console.log('this1')
+        currentIndex -= 1;
+        sliderStep += sliderContainer.clientWidth + gap * gapAdd;
+    }
+    
+    sliderPetsBlock.forEach((el, i) => {
+        if (currentArr[i] !== undefined && pets[currentArr[i]] !== undefined) {
+            el.setAttribute('data-id', pets[currentArr[i]].id);
+            el.addEventListener('click', function(e){
+                sliderInfo(e)});
+            fillSlide(el, currentArr[i]);
+        }
+       
+    
+        if(currentIndex === sliderPetsBlock.length / slideToShow){
+            el.style.transition = 'transform 0s ease-in-out';
+            
+        } else {
+            el.removeAttribute('style');
+        }
+    
+
+        // console.log(sliderStep)
+        el.style.transform = `translateX(${sliderStep}px)`;
+    });   
    
-    console.log('step1')
-    console.log(sliderStep);   
-    sliderStep -= slidesWidth + gap * 3;
-    console.log(sliderStep);  
-    console.log('step2') 
-    sliderPetsBlock.forEach((el) => {
-        console.log('step3')
-        el.style.transform = `translateX(-${sliderStep}px)`;
-        
-    });
-    console.log(sliderStep); 
-    console.log('step4')
+
+    currentArr = fillCurrentArrayIfEmpty(slideToShow)
+    startSlider(currentArr);
 }
 
 

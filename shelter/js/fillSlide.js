@@ -6,5 +6,6 @@ export default function fillSlide(el, randomNumber){
     const namePet = el.children[1];
     img.setAttribute('src', pets[randomNumber].imgSrc);
     namePet.textContent = pets[randomNumber].namePet;
+    console.log('fillSlide')
     return 
 }

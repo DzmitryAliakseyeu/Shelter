@@ -1,0 +1,100 @@
+import { pets } from "./objects.js";
+import { startSlider, stopSlider } from "./slider.js";
+
+export function sliderInfo(e){
+    if(document.querySelector('.modal-container')){
+        document.querySelector('.modal-container').remove();
+    }
+
+    const elID = e.currentTarget.dataset.id - 1;
+
+    const currentObject = pets[elID];
+    console.log(currentObject)
+
+    const containerPets = document.querySelector('.container__pets');
+    
+
+    const modalContainer = document.createElement('div');
+    modalContainer.classList.add('modal-container');
+    containerPets.prepend(modalContainer);
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modalContainer.prepend(modal);
+
+    const buttonCloseModal = document.createElement('div');
+    buttonCloseModal.classList.add('button-close-modal');
+    modal.prepend(buttonCloseModal);
+   
+
+    const sliderContent = document.createElement('div');
+    sliderContent.classList.add('slider-content');
+    modal.append(sliderContent);
+
+    const imageContainer = document.createElement('div');
+    imageContainer.classList.add('image-container');
+    sliderContent.prepend(imageContainer);
+
+    const imgModal = document.createElement('img');
+    imgModal.classList.add('image-modal');
+    imgModal.setAttribute('src', currentObject.imgSrc)
+    imageContainer.prepend(imgModal);
+
+    const sliderTextContent = document.createElement('div');
+    sliderTextContent.classList.add('text-container');
+    sliderContent.append(sliderTextContent);
+
+    const naming = document.createElement('div');
+    naming.classList.add('naming');
+    sliderTextContent.append(naming);
+
+    const namePet = document.createElement('h3');
+    naming.prepend(namePet);
+    namePet.innerText = currentObject.namePet;
+    const species = document.createElement('h4');
+    naming.append(species);
+    species.innerText = currentObject.species + '-' + currentObject.breed;
+
+    const description = document.createElement('p');
+    sliderTextContent.append(description);
+    description.innerText = currentObject.description;
+
+    const additionalDescription = document.createElement('ul');
+    additionalDescription.classList.add('add-descr');
+    sliderTextContent.append(additionalDescription);
+
+    for(let i = 0; i < 4; i += 1){
+        const point = document.createElement('li');
+        point.classList.add('add-descr_point');
+        additionalDescription.append(point);
+        switch(i){
+            case 0:
+                point.innerHTML = '<b>Age: </b>' + currentObject.age;
+                break;
+            case 1:
+                point.innerHTML = '<b>Inoculations: </b>' + currentObject.inoculations;
+                break;
+            case 2:
+                point.innerHTML = '<b>Diseases: </b>' + currentObject.diseases;
+                break;
+            case 3:
+                point.innerHTML = '<b>Parasites: </b>' + currentObject.parasites;
+                break;
+            default:
+        }
+        
+    }
+
+    document.body.classList.add('no-scroll');
+    buttonCloseModal.addEventListener('click', ()=> {
+        const modalContainer = document.querySelector('.modal-container');
+        console.log(modalContainer)
+        modalContainer.remove();
+        if(document.body.className === 'no-scroll'){
+            document.body.classList.remove('no-scroll');
+        }
+        startSlider()
+        
+       
+    })
+    stopSlider();
+}
