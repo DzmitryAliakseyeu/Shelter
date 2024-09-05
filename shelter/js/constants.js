@@ -8,3 +8,4 @@ export const sliderPetsBlock = document.querySelectorAll('.slider__block');
 export const buttonNextPage = document.querySelector('.navigation-block__next');
 export const buttonBackPage = document.querySelector('.navigation-block__back');
 export const buttonStartPage = document.querySelector('.navigation-block__start');
+export const buttonEndPage = document.querySelector('.navigation-block__end');

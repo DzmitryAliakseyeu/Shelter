@@ -8,11 +8,11 @@ export function generateSlidesArray(){
     let pageArr = [];
     let randomNumber = 0;
  
-    while(count <= 8){
+    while(count <= 6){
         randomNumber = randomArr(0, sliderPetsBlock.length - 1);
        console.log(pageArr)
         console.log(randomNumber);
-        if(count === 8){
+        if(count === 6){
             return mainArr;
         }
         if(!pageArr.includes(randomNumber)){
@@ -23,7 +23,7 @@ export function generateSlidesArray(){
                 count += 1;
             }
         }
-        if (count > 8) {
+        if (count > 6) {
             break;
         }
     }
