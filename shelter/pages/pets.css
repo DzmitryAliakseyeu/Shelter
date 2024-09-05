@@ -131,6 +131,7 @@ body .container .container__pets .pets {
 body .container .container__pets .pets .pets__slider {
     padding-top: 15px;
     padding-bottom: 15px;
+    max-width: 1200px;
 }
 
 body .container .container__pets .pets .pets__slider .slider__pets-block {
@@ -139,6 +140,8 @@ body .container .container__pets .pets .pets__slider .slider__pets-block {
     width: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
+    max-width: 1200px;
+    height: fit-content;
 }
 
 body .container .container__pets .pets h3 {

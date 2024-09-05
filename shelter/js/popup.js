@@ -2,6 +2,7 @@ import { pets } from "./objects.js";
 import { startSlider, stopSlider } from "./slider.js";
 
 export function sliderInfo(e){
+    console.log('come at')
     if(document.querySelector('.modal-container')){
         document.querySelector('.modal-container').remove();
     }

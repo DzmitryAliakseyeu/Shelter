@@ -4,7 +4,7 @@ import fillSlide from "./fillSlide.js";
 import { defineSlideToShow } from "./index.js";
 import { arrLastSlides, pets } from "./objects.js";
 import { sliderInfo } from "./popup.js";
-import randomArr from "./randomFunction.js";
+import randomArr from "./randomNumber.js";
 
 export let slideToShow;
 let slideWidth = sliderPetsBlock[0].clientWidth;
@@ -20,6 +20,11 @@ let count  = 0;
 let move;
 
 export let random = (arr) => {
+
+    if(!Array.isArray(arr)){
+        console.log("Аргумент не является массивом:", arr);
+        return;
+    }
     
     do {
         randomNumber = randomArr(0, pets.length-1);

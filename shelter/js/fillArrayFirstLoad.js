@@ -1,6 +1,6 @@
 // import { currentArrFirst } from "./index.js";
 import { pets } from "./objects.js";
-import randomArr from "./randomFunction.js";
+import randomArr from "./randomNumber.js";
 import { random } from "./slider.js";
 
 
@@ -12,6 +12,7 @@ export function fillCurrentArray(slideToShow){
         console.log('arr length 0')
         while(count < pets.length){
             arr = random(arr);
+            console.log(arr)
             count ++;
         }
         if(slideToShow > 2){
