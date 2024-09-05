@@ -64,8 +64,6 @@ buttonBackPage.addEventListener('click', ()=>{
         buttonBackPage.style = 'transition: 0s'
         buttonStartPage.removeAttribute('style');
          buttonStartPage.style = 'transition: 0s';
-        //   buttonNextPage.removeAttribute('style');
-        //   buttonNextPage.style = 'transition: 0s';
     }
 
     if(pageCount > 1){
@@ -90,10 +88,32 @@ buttonBackPage.addEventListener('click', ()=>{
         })
         console.log(pageCount);
     }
-
-   
-    
-    
 })
+
+buttonStartPage.addEventListener('click', ()=>{
+    pageCount = 1;
+    buttonNextPage.removeAttribute('style');
+    buttonNextPage.style = 'transition: 0s';
+    buttonEndPage.removeAttribute('style');
+    buttonEndPage.style = 'transition: 0s';
+   
+        
+    buttonBackPage.removeAttribute('style');
+    buttonBackPage.style = 'transition: 0s'
+    buttonStartPage.removeAttribute('style');
+    buttonStartPage.style = 'transition: 0s';
+  
+    textPagesCount.innerText = pageCount;
+    sliderPetsBlock.forEach((el, i) => {
+        console.log('fill');
+        console.log(pageCount);
+        console.log(mainArr)
+        console.log(mainArr[pageCount])
+
+    fillCard(el, mainArr[pageCount-1][i]);
+    })
+})
+
+
 
 console.log(buttonNextPage)
