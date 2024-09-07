@@ -13,6 +13,8 @@ export function sliderInfo(e){
     console.log(currentObject)
 
     const containerPets = document.querySelector('.container__pets');
+
+    console.log(containerPets)
     
 
     const modalContainer = document.createElement('div');
@@ -37,7 +39,12 @@ export function sliderInfo(e){
 
     const imgModal = document.createElement('img');
     imgModal.classList.add('image-modal');
-    imgModal.setAttribute('src', currentObject.imgSrc)
+    if(window.location.pathname.includes('index.html')){
+        imgModal.setAttribute('src', currentObject.imgSrc)
+    } else {
+        imgModal.setAttribute('src', '.' + currentObject.imgSrc)
+    }
+  
     imageContainer.prepend(imgModal);
 
     const sliderTextContent = document.createElement('div');
@@ -86,16 +93,28 @@ export function sliderInfo(e){
     }
 
     document.body.classList.add('no-scroll');
-    buttonCloseModal.addEventListener('click', ()=> {
-        const modalContainer = document.querySelector('.modal-container');
-        console.log(modalContainer)
-        modalContainer.remove();
-        if(document.body.className === 'no-scroll'){
-            document.body.classList.remove('no-scroll');
-        }
-        startSlider()
-        
-       
-    })
-    stopSlider();
+    if(window.location.pathname.includes('index.html')){
+        buttonCloseModal.addEventListener('click', ()=> {
+            const modalContainer = document.querySelector('.modal-container');
+            console.log(modalContainer)
+            modalContainer.remove();
+            if(document.body.className === 'no-scroll'){
+                document.body.classList.remove('no-scroll');
+            }
+            startSlider()
+            
+           
+        })
+        stopSlider();
+    } else {
+        buttonCloseModal.addEventListener('click', ()=> {
+            const modalContainer = document.querySelector('.modal-container');
+            console.log(modalContainer)
+            modalContainer.remove();
+            if(document.body.className === 'no-scroll'){
+                document.body.classList.remove('no-scroll');
+            }
+        })
+    }
+    
 }
