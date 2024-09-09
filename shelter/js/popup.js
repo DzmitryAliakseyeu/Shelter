@@ -68,16 +68,16 @@ export function sliderInfo(e){
         additionalDescription.append(point);
         switch(i){
             case 0:
-                point.innerHTML = '<b>Age: </b>' + currentObject.age;
+                point.innerHTML = '<span><b>Age: </b>' + currentObject.age + '</span>';
                 break;
             case 1:
-                point.innerHTML = '<b>Inoculations: </b>' + currentObject.inoculations;
+                point.innerHTML = '<span><b>Inoculations: </b>' + currentObject.inoculations +'<span>';
                 break;
             case 2:
-                point.innerHTML = '<b>Diseases: </b>' + currentObject.diseases;
+                point.innerHTML = '<span><b>Diseases: </b>' + currentObject.diseases + '<span>';
                 break;
             case 3:
-                point.innerHTML = '<b>Parasites: </b>' + currentObject.parasites;
+                point.innerHTML = '<span><b>Parasites: </b>' + currentObject.parasites + '<span>';
                 break;
             default:
         }
