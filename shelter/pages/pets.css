@@ -297,6 +297,7 @@ body .container .container__pets .pets .pets__navigation-block .navigation-block
         right: -320px;
         width: 320px;
         background-color: #292929;
+        z-index: 1000;
     }
 
     body .container .header .header__nav ul {

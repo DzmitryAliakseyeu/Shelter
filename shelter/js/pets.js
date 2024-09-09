@@ -1,15 +1,21 @@
 import { buttonBackPage, buttonEndPage, buttonNextPage, buttonStartPage, sliderPetsBlock } from "./constants.js";
 import { fillCard } from "./fillCard.js";
 import { generateSlidesArray } from "./generateArraySlides.js";
+import { defineSlideToShowPets } from "./index.js";
 
 let textPagesCount = document.querySelector('.navigation-block__count');
 let pageCount = 1;
 
 let mainArr = generateSlidesArray();
+let slideToShowPets  = defineSlideToShowPets();
+console.log(slideToShowPets)
 
-sliderPetsBlock.forEach((el, i) => {
-   fillCard(el, mainArr[pageCount - 1][i]);
-})
+// sliderPetsBlock.forEach((el, i) => {
+//     if(i >= slideToShowPets){
+//         el.style = 'display: none;'
+//     }
+//    fillCard(el, mainArr[pageCount - 1][i]);
+// })
 
 buttonNextPage.addEventListener('click', () => {
     

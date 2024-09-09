@@ -1,3 +1,17 @@
+h4 {
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: 1.2px;
+    line-height: 23px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p {
+    font-size: 13px; font-weight: 100;
+    letter-spacing: 0.78px;
+    line-height: 14.3px;
+}
+
 .container {
   
     /* background-color: #000000d8; */
@@ -46,7 +60,7 @@
 }
 
 .image-container {
-    max-width: 500px;
+    /* max-width: 500px; */
     width: 100%;
    
 }
@@ -109,4 +123,10 @@
     overflow: hidden;
     z-index: 111111;
     /* background-color: rgba(0, 0, 0, 0.5); Полупрозрачный черный */
+}
+
+.add-descr_point {
+    font-size: 15px;
+    letter-spacing: 0.9px;
+    line-height: 16.5px;
 }

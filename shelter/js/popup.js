@@ -60,7 +60,7 @@ export function sliderInfo(e){
     namePet.innerText = currentObject.namePet;
     const species = document.createElement('h4');
     naming.append(species);
-    species.innerText = currentObject.species + '-' + currentObject.breed;
+    species.innerText = currentObject.species + ' - ' + currentObject.breed;
 
     const description = document.createElement('p');
     sliderTextContent.append(description);
