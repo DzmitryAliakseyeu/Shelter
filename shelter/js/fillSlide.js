@@ -1,9 +1,7 @@
 import { pets } from "./objects.js";
-import randomArr from "./randomNumber.js";
 
 export default function fillSlide(el, randomNumber){
 
-    console.log('fillSlide')
     const img = el.children[0];
     const namePet = el.children[1];
   
@@ -16,5 +14,4 @@ export default function fillSlide(el, randomNumber){
         namePet.textContent = pets[randomNumber].namePet;
         return 
     }
-    
 }

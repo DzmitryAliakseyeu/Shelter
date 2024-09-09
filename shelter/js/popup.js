@@ -2,21 +2,13 @@ import { pets } from "./objects.js";
 import { startSlider, stopSlider } from "./slider.js";
 
 export function sliderInfo(e){
-    console.log('come at')
     if(document.querySelector('.modal-container')){
         document.querySelector('.modal-container').remove();
     }
 
     const elID = e.currentTarget.dataset.id - 1;
-
     const currentObject = pets[elID];
-    console.log(currentObject)
-
     const containerPets = document.querySelector('.container__pets');
-
-    console.log(containerPets)
-    
-
     const modalContainer = document.createElement('div');
     modalContainer.classList.add('modal-container');
     containerPets.prepend(modalContainer);
@@ -89,14 +81,12 @@ export function sliderInfo(e){
                 break;
             default:
         }
-        
     }
 
     document.body.classList.add('no-scroll');
     if(window.location.pathname.includes('index.html')){
         buttonCloseModal.addEventListener('click', ()=> {
             const modalContainer = document.querySelector('.modal-container');
-            console.log(modalContainer)
             modalContainer.remove();
             if(document.body.className === 'no-scroll'){
                 document.body.classList.remove('no-scroll');
@@ -109,12 +99,10 @@ export function sliderInfo(e){
     } else {
         buttonCloseModal.addEventListener('click', ()=> {
             const modalContainer = document.querySelector('.modal-container');
-            console.log(modalContainer)
             modalContainer.remove();
             if(document.body.className === 'no-scroll'){
                 document.body.classList.remove('no-scroll');
             }
         })
     }
-    
 }

@@ -20,9 +20,7 @@ let count  = 0;
 let move;
 
 export let random = (arr) => {
-
     if(!Array.isArray(arr)){
-        console.log("Аргумент не является массивом:", arr);
         return;
     }
     
@@ -35,7 +33,6 @@ export let random = (arr) => {
 
 function fillCurrentArrayIfEmpty(slideToShow) {
     slideToShow =  defineSlideToShow();
-    // console.log(slideToShow)
     if (currentArr.length === 0) {
         while (count < pets.length) {
             random(currentArr);
@@ -44,7 +41,6 @@ function fillCurrentArrayIfEmpty(slideToShow) {
     }
     if(slideToShow > 2){
         currentArr.push(randomArr(2, 4));
-        // sliderPetsBlock[sliderPetsBlock.length - 1].style = 'display: none;'
         return currentArr
     }
     return currentArr
@@ -61,7 +57,6 @@ export function startSlider(currentArray) {
     }
 
     if(currentArray || currentArr.length > 0){
-        // console.log(currentArray)
         move = setInterval(() => {
             movedSliderLeft();
         }, 2000); 
@@ -79,9 +74,6 @@ export default function movedSliderLeft() {
     slideToShow =  defineSlideToShow();
     slidesWidth = slideWidth * slideToShow;
     gap = (sliderContainer.clientWidth - slidesWidth) / slideToShow;
-    // gap = (sliderContainer.clientWidth - slidesWidth) / slideToShow;
-    console.log('sliderStep left: ' + sliderStep)
-    console.log('currentIndex left: ' +currentIndex)
  
     if (currentIndex >= 1 && currentIndex < Math.floor(sliderPetsBlock.length / slideToShow)){
         currentIndex += 1;
@@ -122,9 +114,7 @@ export default function movedSliderLeft() {
     startSlider(currentArr)
 }
 
-export function movedSliderRight() { 
-    console.log('current Index === ' + currentIndex)
-  
+export function movedSliderRight() {   
     stopSlider()
     slideToShow =  defineSlideToShow();
     if(slideToShow === 1){
@@ -135,7 +125,6 @@ export function movedSliderRight() {
         gapAdd = 1.5;
     }
 
-    console.log(gapAdd)
     slidesWidth = slideWidth * slideToShow;
     gap = (sliderContainer.clientWidth - slidesWidth) / slideToShow;
     currentArr.length = 0;
@@ -145,7 +134,6 @@ export function movedSliderRight() {
         currentIndex = Math.floor(sliderPetsBlock.length / slideToShow);
         sliderStep = -(sliderContainer.clientWidth + gap * gapAdd) * (slideToShow - 1);
     } else if (currentIndex > 1 && currentIndex < Math.floor(sliderPetsBlock.length / slideToShow)) {
-        console.log('this')
         if (slideToShow == 1) {
             sliderContainer.style.gap = `clamp(0px, calc((100% - ${slideToShow} * 270px) / 2), 90px)`;
             sliderStep -= sliderContainer.clientWidth;
@@ -153,13 +141,10 @@ export function movedSliderRight() {
             sliderContainer.style.gap = `clamp(5px, calc((100% - ${slideToShow} * 270px)), 90px)`;
             sliderStep -= sliderContainer.clientWidth + gap * gapAdd;
         } else if (slideToShow === 3) {
-            console.log(sliderStep)
             sliderStep += sliderContainer.clientWidth + gap * gapAdd;
-            console.log(sliderStep)
             currentIndex -= 1;
         }
     } else if(currentIndex === Math.floor(sliderPetsBlock.length / slideToShow)){
-        console.log('this1')
         currentIndex -= 1;
         sliderStep += sliderContainer.clientWidth + gap * gapAdd;
     }
@@ -179,9 +164,7 @@ export function movedSliderRight() {
         } else {
             el.removeAttribute('style');
         }
-    
 
-        // console.log(sliderStep)
         el.style.transform = `translateX(${sliderStep}px)`;
     });   
    
