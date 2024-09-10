@@ -127,7 +127,6 @@ p {
     /* position: relative; */
     overflow: hidden;
     z-index: 111111;
-    /* background-color: rgba(0, 0, 0, 0.5); Полупрозрачный черный */
 }
 
 .add-descr_point {
