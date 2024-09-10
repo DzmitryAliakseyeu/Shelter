@@ -1,7 +1,22 @@
 import { pets } from "./objects.js";
 import { startSlider, stopSlider } from "./slider.js";
 
+
+
 export function sliderInfo(e){
+
+    document.addEventListener('click', (e) => {
+        if(e.target.className === 'modal-container'){
+            if(document.querySelector('.modal-container')){
+                document.querySelector('.modal-container').remove()
+            }
+        
+            if(document.body.className === 'no-scroll'){
+                document.body.classList.remove('no-scroll');
+            }
+        }
+    })
+
     if(document.querySelector('.modal-container')){
         document.querySelector('.modal-container').remove();
     }
