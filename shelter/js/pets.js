@@ -1,5 +1,5 @@
-import { buttonBackPage, buttonEndPage, buttonNextPage, buttonStartPage, sliderPetsBlock } from "./constants.js";
-import { measurementScreenSize } from "./controlBurgerMenu.js";
+import { buttonBackPage, buttonBurger, buttonEndPage, buttonNextPage, buttonStartPage, sliderPetsBlock } from "./constants.js";
+import controlBurgerMenu, { measurementScreenSize } from "./controlBurgerMenu.js";
 import { fillCard } from "./fillCard.js";
 import { generateSlidesArray } from "./generateArraySlides.js";
 import { defineSlideToShowPets } from "./index.js";
@@ -10,6 +10,10 @@ let pageCount = 1;
 
 
 if(currentUrl.pathname.includes('pets.html')){
+
+    if(buttonBurger){
+        buttonBurger.addEventListener('click', controlBurgerMenu);
+    }
 
     let slideToShowPets = defineSlideToShowPets();
     let mainArr = generateSlidesArray(slideToShowPets);
