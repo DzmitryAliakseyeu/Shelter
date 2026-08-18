@@ -9,7 +9,7 @@ let textPagesCount = document.querySelector('.navigation-block__count');
 let pageCount = 1;
 
 
-if(currentUrl.pathname.includes('pets.html')){
+if(currentUrl.pathname.includes('pets.html') || currentUrl.pathname.includes('pets.html#') || currentUrl.pathname.includes('pets.html?')){
 
     if(buttonBurger){
         buttonBurger.addEventListener('click', controlBurgerMenu);
