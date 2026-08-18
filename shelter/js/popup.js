@@ -46,7 +46,7 @@ export function sliderInfo(e){
 
     const imgModal = document.createElement('img');
     imgModal.classList.add('image-modal');
-    if(window.location.pathname.includes('index.html')){
+    if(!window.location.pathname.includes('pets.html')){
         imgModal.setAttribute('src', currentObject.imgSrc)
     } else {
         imgModal.setAttribute('src', '.' + currentObject.imgSrc)
@@ -99,7 +99,7 @@ export function sliderInfo(e){
     }
 
     document.body.classList.add('no-scroll');
-    if(window.location.pathname.includes('index.html')){
+    if(!window.location.pathname.includes('pets.html')){
         buttonCloseModal.addEventListener('click', ()=> {
             const modalContainer = document.querySelector('.modal-container');
             modalContainer.remove();
