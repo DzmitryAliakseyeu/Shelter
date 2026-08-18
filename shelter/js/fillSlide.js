@@ -5,12 +5,12 @@ export default function fillSlide(el, randomNumber){
     const img = el.children[0];
     const namePet = el.children[1];
   
-    if(window.location.pathname.includes('index.html')){
-        img.setAttribute('src', pets[randomNumber].imgSrc);
+    if(window.location.pathname.includes('pets.html')){
+        img.setAttribute('src', '.' + pets[randomNumber].imgSrc);
         namePet.textContent = pets[randomNumber].namePet;
         return 
     } else {
-        img.setAttribute('src', '.' + pets[randomNumber].imgSrc);
+        img.setAttribute('src', pets[randomNumber].imgSrc);
         namePet.textContent = pets[randomNumber].namePet;
         return 
     }
