@@ -28,7 +28,7 @@ export function defineSlideToShowPets(){
 
 const currentUrl = window.location;
 
-if(!currentUrl.pathname.includes('pets.html')){
+if(currentUrl.pathname.includes('index.html') || currentUrl.pathname === '/' || currentUrl.pathname.includes('index.html#') || currentUrl.pathname.includes('index.html?')){
     window.addEventListener('resize', function() {
         measurementScreenSize();
     });
